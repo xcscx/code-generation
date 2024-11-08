@@ -24,6 +24,7 @@ public class FreeMarkerTest {
         configuration.setDefaultEncoding("utf-8");
 
         Template template = configuration.getTemplate("myweb.html.ftl");
+        configuration.setNumberFormat("0.####");
 
         Map<String, Object> dataModel = new HashMap<>();
         dataModel.put("currentYear", 2024);
