@@ -4,6 +4,9 @@ import cn.hutool.core.io.FileUtil;
 
 import java.io.File;
 
+/**
+ * 生成静态文件
+ */
 public class StaticGenerator {
 
     public static void copyFileByHutool(String inputPath, String outputPath) {
@@ -21,5 +24,4 @@ public class StaticGenerator {
 
         System.out.println(projectPath);
     }
-
 }
