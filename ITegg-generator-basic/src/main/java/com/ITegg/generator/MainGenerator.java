@@ -20,6 +20,7 @@ public class MainGenerator {
     public static void doGenerate(Object model) throws IOException, TemplateException {
         // 获取整个项目的根目录
         String projectPath = System.getProperty("user.dir");
+        // 获取路径父文件
         File parentFile = new File(projectPath).getParentFile();
         String input = new File(parentFile, "samples/acm-template").getAbsolutePath();
         String output = projectPath;
