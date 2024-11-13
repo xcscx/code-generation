@@ -36,13 +36,13 @@ public class SubCommandExample implements Runnable {
 
     public static void main(String[] args) {
         // 执行主命令
-//        String[] myArgs = new String[]{};
+        String[] myArgs = new String[]{};
         // 查看主命令的帮助手册
 //         String[] myArgs = new String[]{"--help"};
         // 查看增加命令
 //         String[] myArgs = new String[]{"add"};
         // 查看增加命令的帮助手册
-         String[] myArgs = new String[]{"add", "--help"};
+//         String[] myArgs = new String[]{"add", "--help"};
         // 查看不存在的命令，会报错
 //         String[] myArgs = new String[]{"update"};
         int exitCode = new CommandLine(new SubCommandExample())
@@ -82,6 +82,15 @@ class CommandLineTest {
     @Test
     public void testAddSubCommand() {
         String[] args = new String[] {"add"};
+        int exitCode = commandLine.execute(args);
+        assertEquals(0, exitCode);
+    }
+
+
+    // 测试增加帮助子命令
+    @Test
+    public void testAddHelpSubCommand() {
+        String[] args = new String[] {"add", "--help"};
         int exitCode = commandLine.execute(args);
         assertEquals(0, exitCode);
     }
